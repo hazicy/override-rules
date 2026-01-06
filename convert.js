@@ -1,6 +1,6 @@
 /*
-powerfullz 的 Substore 订阅转换脚本
-https://github.com/powerfullz/override-rules
+hazicy 的 Substore 订阅转换脚本
+https://github.com/hazicy/override-rules
 
 支持的传入参数：
 - loadbalance: 启用负载均衡（url-test/load-balance，默认 false）
@@ -175,7 +175,7 @@ const ruleProviders = {
     behavior: 'classical',
     format: 'text',
     interval: 86400,
-    url: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/TikTok.list',
+    url: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/ruleset/TikTok.list',
     path: './ruleset/TikTok.list',
   },
   SteamFix: {
@@ -183,7 +183,7 @@ const ruleProviders = {
     behavior: 'classical',
     format: 'text',
     interval: 86400,
-    url: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/SteamFix.list',
+    url: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/ruleset/SteamFix.list',
     path: './ruleset/SteamFix.list',
   },
   GoogleFCM: {
@@ -191,7 +191,7 @@ const ruleProviders = {
     behavior: 'classical',
     format: 'text',
     interval: 86400,
-    url: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/FirebaseCloudMessaging.list',
+    url: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/ruleset/FirebaseCloudMessaging.list',
     path: './ruleset/FirebaseCloudMessaging.list',
   },
   AdditionalFilter: {
@@ -199,7 +199,7 @@ const ruleProviders = {
     behavior: 'classical',
     format: 'text',
     interval: 86400,
-    url: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/AdditionalFilter.list',
+    url: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/ruleset/AdditionalFilter.list',
     path: './ruleset/AdditionalFilter.list',
   },
   AdditionalCDNResources: {
@@ -207,7 +207,7 @@ const ruleProviders = {
     behavior: 'classical',
     format: 'text',
     interval: 86400,
-    url: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/AdditionalCDNResources.list',
+    url: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/ruleset/AdditionalCDNResources.list',
     path: './ruleset/AdditionalCDNResources.list',
   },
 };
@@ -235,7 +235,6 @@ const baseRules = [
   'GEOSITE,SPOTIFY,Spotify',
   'GEOSITE,BILIBILI,Bilibili',
   `GEOSITE,MICROSOFT@CN,${PROXY_GROUPS.DIRECT}`,
-  'GEOSITE,PIKPAK,PikPak',
   `GEOSITE,GFW,${PROXY_GROUPS.SELECT}`,
   `GEOSITE,CN,${PROXY_GROUPS.DIRECT}`,
   `GEOSITE,PRIVATE,${PROXY_GROUPS.DIRECT}`,
@@ -549,31 +548,31 @@ function buildProxyGroups({
     },
     {
       name: 'AI',
-      icon: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png',
+      icon: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/icons/chatgpt.png',
       type: 'select',
       proxies: defaultProxies,
     },
     {
       name: 'Github',
-      icon: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png',
+      icon: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/icons/chatgpt.png',
       type: 'select',
       proxies: defaultProxies,
     },
     {
       name: 'Bing',
-      icon: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png',
+      icon: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/icons/chatgpt.png',
       type: 'select',
       proxies: defaultProxies,
     },
     {
       name: 'Google',
-      icon: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png',
+      icon: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/icons/Google.png',
       type: 'select',
       proxies: defaultProxies,
     },
     {
       name: 'Microsoft',
-      icon: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Microsoft_Copilot.png',
+      icon: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/icons/Microsoft_Copilot.png',
       type: 'select',
       proxies: defaultProxies,
     },
@@ -618,13 +617,7 @@ function buildProxyGroups({
     },
     {
       name: 'OneDrive',
-      icon: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Onedrive.png',
-      type: 'select',
-      proxies: defaultProxies,
-    },
-    {
-      name: 'PikPak',
-      icon: 'https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/PikPak.png',
+      icon: 'https://gcore.jsdelivr.net/gh/hazicy/override-rules@master/icons/Onedrive.png',
       type: 'select',
       proxies: defaultProxies,
     },
