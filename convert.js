@@ -219,6 +219,7 @@ const baseRules = [
     `DOMAIN,services.googleapis.cn,${PROXY_GROUPS.SELECT}`,
     `GEOSITE,GOOGLE-PLAY@CN,${PROXY_GROUPS.DIRECT}`,
     "GEOSITE,ONEDRIVE,OneDrive",
+    "GEOSITE,github,Github",
     "GEOSITE,MICROSOFT,Microsoft",
     "GEOSITE,CATEGORY-AI-!CN,AI",
     "GEOSITE,TELEGRAM,Telegram",
@@ -542,6 +543,12 @@ function buildProxyGroups({
         },
         {
             "name": "AI",
+            "icon": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
+            "type": "select",
+            "proxies": defaultProxies
+        },
+            {
+            "name": "Github",
             "icon": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/chatgpt.png",
             "type": "select",
             "proxies": defaultProxies
