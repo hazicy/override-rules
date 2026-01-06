@@ -149,14 +149,6 @@ const ruleProviders = {
         "url": "https://adrules.top/adrules-mihomo.mrs",
         "path": "./ruleset/ADBlock.mrs"
     },
-    "SogouInput": {
-        "type": "http",
-        "behavior": "classical",
-        "format": "text",
-        "interval": 86400,
-        "url": "https://ruleset.skk.moe/Clash/non_ip/sogouinput.txt",
-        "path": "./ruleset/SogouInput.txt"
-    },
     "StaticResources": {
         "type": "http",
         "behavior": "domain",
@@ -180,14 +172,6 @@ const ruleProviders = {
         "interval": 86400,
         "url": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/TikTok.list",
         "path": "./ruleset/TikTok.list"
-    },
-    "EHentai": {
-        "type": "http",
-        "behavior": "classical",
-        "format": "text",
-        "interval": 86400,
-        "url": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/EHentai.list",
-        "path": "./ruleset/EHentai.list"
     },
     "SteamFix": {
         "type": "http",
@@ -221,26 +205,14 @@ const ruleProviders = {
         "url": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/AdditionalCDNResources.list",
         "path": "./ruleset/AdditionalCDNResources.list"
     },
-    "Crypto": {
-        "type": "http",
-        "behavior": "classical",
-        "format": "text",
-        "interval": 86400,
-        "url": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/Crypto.list",
-        "path": "./ruleset/Crypto.list"
-    }
 }
 
 const baseRules = [
     `RULE-SET,ADBlock,广告拦截`,
     `RULE-SET,AdditionalFilter,广告拦截`,
-    `RULE-SET,SogouInput,搜狗输入法`,
-    `DOMAIN-SUFFIX,truthsocial.com,Truth Social`,
     `RULE-SET,StaticResources,静态资源`,
     `RULE-SET,CDNResources,静态资源`,
     `RULE-SET,AdditionalCDNResources,静态资源`,
-    `RULE-SET,Crypto,Crypto`,
-    `RULE-SET,EHentai,E-Hentai`,
     `RULE-SET,TikTok,TikTok`,
     `RULE-SET,SteamFix,${PROXY_GROUPS.DIRECT}`,
     `RULE-SET,GoogleFCM,${PROXY_GROUPS.DIRECT}`,
@@ -254,7 +226,6 @@ const baseRules = [
     "GEOSITE,GOOGLE,Google",
     "GEOSITE,NETFLIX,Netflix",
     "GEOSITE,SPOTIFY,Spotify",
-    "GEOSITE,BAHAMUT,Bahamut",
     "GEOSITE,BILIBILI,Bilibili",
     `GEOSITE,MICROSOFT@CN,${PROXY_GROUPS.DIRECT}`,
     "GEOSITE,PIKPAK,PikPak",
@@ -576,12 +547,6 @@ function buildProxyGroups({
             "proxies": defaultProxies
         },
         {
-            "name": "Crypto",
-            "icon": "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cryptocurrency_3.png",
-            "type": "select",
-            "proxies": defaultProxies
-        },
-        {
             "name": "Google",
             "icon": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Google.png",
             "type": "select",
@@ -606,12 +571,6 @@ function buildProxyGroups({
             "proxies": (hasTW && hasHK) ? [PROXY_GROUPS.DIRECT, "台湾节点", "香港节点"] : defaultProxiesDirect
         },
         {
-            "name": "Bahamut",
-            "icon": "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png",
-            "type": "select",
-            "proxies": (hasTW) ? ["台湾节点", PROXY_GROUPS.SELECT, PROXY_GROUPS.MANUAL, PROXY_GROUPS.DIRECT] : defaultProxies
-        },
-        {
             "name": "Netflix",
             "icon": "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png",
             "type": "select",
@@ -630,22 +589,10 @@ function buildProxyGroups({
             "proxies": defaultProxies
         },
         {
-            "name": "E-Hentai",
-            "icon": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Ehentai.png",
-            "type": "select",
-            "proxies": defaultProxies
-        },
-        {
             "name": "Telegram",
             "icon": "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png",
             "type": "select",
             "proxies": defaultProxies
-        },
-        {
-            "name": "Truth Social",
-            "icon": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/TruthSocial.png",
-            "type": "select",
-            "proxies": (hasUS) ? ["美国节点", PROXY_GROUPS.SELECT, PROXY_GROUPS.MANUAL] : defaultProxies
         },
         {
             "name": "OneDrive",
@@ -664,14 +611,6 @@ function buildProxyGroups({
             "icon": "https://gcore.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Server.png",
             "type": "select",
             "proxies": defaultProxies
-        },
-        {
-            "name": "搜狗输入法",
-            "icon": "https://gcore.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Sougou.png",
-            "type": "select",
-            "proxies": [
-                PROXY_GROUPS.DIRECT, "REJECT"
-            ]
         },
         {
             "name": PROXY_GROUPS.DIRECT,
